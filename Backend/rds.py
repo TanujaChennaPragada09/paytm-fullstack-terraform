@@ -7,9 +7,9 @@ CORS(app)  # Allow frontend to call backend
 
 # RDS MySQL config
 db_config = {
-    "host": "",  #add your rds  
+    "host": "paytm-db.c2tmsk8a8e60.us-east-1.rds.amazonaws.com:3306",  #add your rds  
     "user": "admin",
-    "password": "Cloud1234",  #add your password 
+    "password": "admin123",  #add your password 
     "database": "paytm"  #add your db name 
 }
 
@@ -78,3 +78,4 @@ def login_user():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
