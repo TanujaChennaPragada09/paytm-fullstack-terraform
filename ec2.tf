@@ -33,3 +33,17 @@ resource "aws_instance" "frontend" {
   }
 }
 
+resource "aws_instance" "prometheus" {
+  ami           = "ami-0c7217cdde317cfec" # Ubuntu 22.04 AMI
+  instance_type = "t2.micro"
+  subnet_id     = aws_subnet.public_subnet_a.id
+  vpc_security_group_ids = [aws_security_group.paytm_sg.id]
+  key_name      = var.key_name
+
+  tags = {
+    Name = "paytm-prometheus"
+  }
+}
+
+
+
